@@ -1,0 +1,19 @@
+SHELL = /bin/sh
+FLAGS = -Wall
+CC = g++
+DEBUG = -g
+CFLAGS = -Wall $(DEBUG)
+
+all:    TwoPipesTwoChildren TwoPipesThreeChildren DynPipe  
+
+TwoPipesTwoChildren:     TwoPipesTwoChildren.cpp
+	$(CC) $(FLAGS) $(CFLAGS) -o $@ TwoPipesTwoChildren.cpp
+
+TwoPipesThreeChildren:     TwoPipesThreeChildren.cpp
+	$(CC) $(FLAGS) $(CFLAGS) -o $@ TwoPipesThreeChildren.cpp
+
+DynPipe: DynPipe.cpp
+	$(CC) $(FLAGS) $(CFLAGS) -o $@ DynPipe.cpp
+
+clean:
+	rm TwoPipesTwoChildren TwoPipesThreeChildren DynPipe
